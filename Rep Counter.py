@@ -1,5 +1,5 @@
 #   Rep Counter for working out
-#       Version = 0.3
+#       Version = 0.3-alpha
 
 
 import time
