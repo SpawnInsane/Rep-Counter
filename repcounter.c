@@ -1,13 +1,23 @@
+/**
+ * Rep Counter
+ *
+ * Version: alpha 1.0
+ * Description: Takes inputs from users to determine the wait time between workout reps they aim to do.
+ *
+ * Inputs:
+ * - totalreps: an integer representing the total number of reps to be done.
+ * - repminutes: an integer representing the time in minutes between each rep.
+ *
+ * Outputs:
+ * - The program prints the countdown timer for each rep, displaying the minutes and seconds remaining.
+ * - It prompts the user to start the next rep after each countdown.
+ * - After completing all the reps, it displays a message indicating that the workout is done.
+ * - It counts down to close the window.
+ */
+
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
-
-/*Rep Counter
-
-    Version: alpha 1.0
-    Discription: Takes inputs from users to determine the wait time between workout reps they aim to do.
-
-*/
 
 int main(){
 
