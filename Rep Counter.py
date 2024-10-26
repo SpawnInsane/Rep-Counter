@@ -94,7 +94,7 @@ def countdown(time_sec):
 
 os.system("cls" if os.name == "nt" else "clear")
 
-totalreps=0
+totalreps = 0 
 reps = 0
 
 amounts=int(input("How many Reps are you doing today?\n"))
@@ -103,7 +103,7 @@ totalreps = totalreps + amounts
 
 if totalreps == 0:
     print("Wow u a lazy bitch......")
-    pygame.mixer.music.load("sounds\mother-fucker.mp3")
+    pygame.mixer.music.load("sounds/mother-fucker.mp3")
     pygame.mixer.music.play()
 else:
     while reps < totalreps:
@@ -111,7 +111,7 @@ else:
         a=int(input("How long till next Rep in minutes?\n\n"))
         countdown(a*60)
         print("\nStart your next Rep")
-        pygame.mixer.music.load("sounds\loud-noises!.mp3")
+        pygame.mixer.music.load("sounds/loud-noises!.mp3")
         pygame.mixer.music.play()
         reps = reps+1
         time.sleep(10)
@@ -124,4 +124,4 @@ print("Closing window in:")
 countdown(60)
 
 exit()
-"""
+""
