@@ -1,0 +1,25 @@
+name: Windows build
+
+on:
+  push:
+    branches: [Main, Basic-UI]
+  pull_request:
+    branches: [Main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-package:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Configure
+        run: cmake -S . -B build -DBUILD_TESTING=ON
+      - name: Build with warnings as errors
+        run: cmake --build build --config Release -- /p:TreatWarningsAsErrors=true
+      - name: Test
+        run: ctest --test-dir build -C Release --output-on-failure
+      - name: Verify portable package
+        run: cpack --config build/CPackConfig.cmake -C Release
