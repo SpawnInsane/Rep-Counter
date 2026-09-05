@@ -1,32 +1,29 @@
-# Rep Counter v0.4-alpha
-
-> First alpha release of the native C++ desktop app for Windows.
+# Rep Counter v0.5.0-alpha
 
 ## Highlights
 
-- Rebuilt Rep Counter from Python as a C++20 application.
-- Added a native Windows desktop interface with a dark theme.
-- Added fields for rep targets and rest time between reps.
-- Added live countdown, rep progress, start, and complete-rep controls.
-- Added support for resizing and maximizing the app window; controls adapt to the available space.
-- Preserved the included MP3 cues for workout notifications.
+- Fixed countdown rounding so rests display their full duration and never finish early.
+- Changed rest input from minutes to seconds and added 30/60/90-second presets.
+- Made the first rep immediate by default; an optional checkbox restores an initial rest.
+- Added pause/resume, skip-rest, cancel, and new-workout controls.
+- Added selectable synthesized alerts, mute, volume, and a workout-complete cue.
+- Added keyboard navigation, shortcuts, visible focus indicators, and Per-Monitor V2 DPI support.
+- Added an original application icon and Windows version metadata.
+- Removed runtime MP3 files and their fragile working-directory dependency.
+- Extracted the workout state machine and added automated tests.
+- Added Windows build/test/package CI and tightened security workflow permissions.
+- Added portable ZIP packaging through CPack.
 
 ## Build
 
-The project now uses CMake and builds with the Visual Studio C++ toolchain:
-
 ```powershell
-cmake -S . -B build
+cmake -S . -B build -DBUILD_TESTING=ON
 cmake --build build --config Release
-.\build\Release\rep_counter.exe
+ctest --test-dir build -C Release --output-on-failure
 ```
 
 ## Known limitations
 
-- This alpha release targets Windows.
-- The app expects the `sounds/` directory to be available when it runs so it can play notification cues.
-- UI behavior and styling may change before a stable release.
-
-## Feedback
-
-Please report bugs or UI feedback through GitHub Issues.
+- Windows is currently the only supported platform.
+- Settings and workout history are not yet persisted between launches.
+- The application is not currently code-signed, so downloaded builds may trigger a Windows reputation warning.
