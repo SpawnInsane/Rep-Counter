@@ -1,6 +1,6 @@
 # Rep Counter
 
-A C++20 console workout rep counter. It asks for a rep target and the wait time before each rep, displays the countdown, and plays the included MP3 notification sounds on Windows.
+A native Windows desktop workout rep counter with a dark-mode interface. Set a rep target and rest time, track each completed rep, and receive the included MP3 notification when it is time to begin the next one.
 
 Current version: **v0.4-alpha**.
 
