@@ -400,7 +400,8 @@ LRESULT CALLBACK windowProc(HWND window, UINT message, WPARAM wParam, LPARAM lPa
     case WM_CTLCOLORBTN: {
         HDC dc = reinterpret_cast<HDC>(wParam);
         const HWND control = reinterpret_cast<HWND>(lParam);
-        const bool prominent = control == g.title || control == g.timer || control == g.progress;
+        const bool prominent = control == g.title || control == g.timer || control == g.progress ||
+            control == g.delayFirst || control == g.mute;
         SetTextColor(dc, prominent ? kText : kMutedText);
         SetBkColor(dc, kBackground);
         return reinterpret_cast<LRESULT>(g.backgroundBrush);
@@ -474,6 +475,8 @@ bool createMainWindow(int showCommand) {
     g.preset90 = addControl(0, L"BUTTON", L"90 sec", BS_OWNERDRAW | WS_TABSTOP, kPreset90);
     g.delayFirst = addControl(0, L"BUTTON", L"Rest before first rep", BS_AUTOCHECKBOX | WS_TABSTOP, kDelayFirstCheck);
     g.mute = addControl(0, L"BUTTON", L"Mute", BS_AUTOCHECKBOX | WS_TABSTOP, kMuteCheck);
+    SetWindowTheme(g.delayFirst, L"", L"");
+    SetWindowTheme(g.mute, L"", L"");
     g.soundLabel = addControl(0, L"STATIC", L"Sound", SS_LEFT, 0);
     g.soundCombo = addControl(0, WC_COMBOBOXW, L"", CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP, kSoundCombo);
     g.volumeLabel = addControl(0, L"STATIC", L"Volume", SS_LEFT, 0);

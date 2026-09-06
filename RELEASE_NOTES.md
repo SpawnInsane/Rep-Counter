@@ -1,3 +1,17 @@
+# Rep Counter v0.5.1-alpha
+
+## Fixes
+
+- Changed the **Mute** and **Rest before first rep** checkbox labels to white for readable contrast in dark mode.
+- Disabled the light Windows checkbox theme for those controls so it cannot override the application colors.
+
+## Verification
+
+- Built successfully with MSVC `/W4` and warnings treated as errors.
+- Passed the complete automated test suite.
+
+---
+
 # Rep Counter v0.5.0-alpha
 
 ## Highlights
