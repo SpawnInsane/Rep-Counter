@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(rep_counter VERSION 0.5.0 LANGUAGES CXX)
+project(rep_counter VERSION 0.5.1 LANGUAGES CXX)
 
 if(NOT WIN32)
     message(FATAL_ERROR "Rep Counter currently supports Windows only.")

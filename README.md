@@ -4,7 +4,7 @@
 
 Rep Counter is a small native Windows workout timer. Set a rep target and rest duration, complete each rep, and receive an audible and visual cue when it is time to continue.
 
-Current version: **v0.5.0-alpha**
+Current version: **v0.5.1-alpha**
 
 ## Features
 
@@ -51,7 +51,7 @@ cmake --install build --config Release --prefix build\install
 cpack --config build\CPackConfig.cmake -C Release
 ```
 
-CPack creates `Rep-Counter-0.5.0-alpha-windows-x64.zip` in the repository root. An NSIS installer can also be generated with `cpack -G NSIS` when NSIS is installed.
+CPack creates `Rep-Counter-0.5.1-alpha-windows-x64.zip` in the repository root. An NSIS installer can also be generated with `cpack -G NSIS` when NSIS is installed.
 
 ## Project structure
 
